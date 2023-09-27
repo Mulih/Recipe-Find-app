@@ -48,6 +48,6 @@ export function displayRecipes(recipes) {
 const query = sessionStorage.getItem('query');
 
 // Fetch and display the recipes
-if (query) {
+if (window.location.pathname.endsWith('results.html') && query && resultsContainer) {
   getRecipes(query);
 }

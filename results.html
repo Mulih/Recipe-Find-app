@@ -6,10 +6,25 @@
     <title>Recipe Search Results</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        body {
+            animation-name: scroll;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes scroll {
+            0% { background-color: maroon; }
+            50% { background-color: black; }
+            100% { background-color: maroon; }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">RecipeFind</a>
+        <a class="navbar-brand" href="#">
+            <img src="images/favicon.png" alt="RecipeFind Logo" style="height:30px;"> RecipeFind
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -50,7 +65,23 @@
 
         // Fetch and display the recipes
         if (query) {
-            getRecipes(query);
+            getRecipes(query)
+                .then(results => {
+                    const resultsDiv = document.getElementById('results');
+                    if (results.length === 0) {
+                        resultsDiv.textContent = 'No recipes found!!';
+                    } else {
+                        // Display the search results
+                        results.forEach(recipe => {
+                            const recipeDiv = document.createElement('div');
+                            recipeDiv.textContent = recipe.title;
+                            resultsDiv.appendChild(recipeDiv);
+                        });
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                });
         }
     </script>
 </body>

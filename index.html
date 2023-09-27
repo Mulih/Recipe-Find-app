@@ -6,10 +6,26 @@
     <title>RecipeFind</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="scripts/styles/styles.css">
+    <link rel="icon"  type="image/png" href="images/favicon.png">
+    <style>
+        body {
+            animation-name: scroll;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes scroll {
+            0% { background-image: url(images/img2.jpg); }
+            50% { background-color: black; }
+            100% { background-image: url(images/img2.jpg); }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">RecipeFind</a>
+        <a class="navbar-brand" href="#">
+            <img src="images/favicon.png" alt="RecipeFind Logo" style="height:30px;"> RecipeFind
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,7 +53,16 @@
             </form>
             <a href="https://peterokeno1.netlify.app/" class="btn btn-primary">Try it now</a>
         </section>
-        <div id="results" class="mt-5"></div>
+        <div id="results" class="mt-5">
+            <p>"Discover your next favorite dish with our RecipeFind app!
+            Our application is designed to help food enthusiasts and
+            home cooks explore a wide variety of recipes from around the world. 
+            Whether you 're looking for a quick weeknight dinner, a comforting soup,
+            or a decadent dessert, Recipe Finder has you covered.
+            Simply input your desired ingredients or select a cuisine,
+            and our app will provide a list of delicious recipes to try.</p>
+            <p>With RecipeFind, your culinary adventure is just a click away!"</p>
+        </div>
     </main>
     <footer class="footer mt-auto py-3 bg-light">
         <div class="container">
@@ -48,8 +73,6 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script type="module">
-        import { getRecipes, displayRecipes } from './scripts/app.js';
-    </script>
+    <script type="module" src="scripts/app.js"></script>
 </body>
 </html>
