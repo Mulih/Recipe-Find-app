@@ -19,6 +19,7 @@ body {
   background-color: rgb(52, 8, 8);
   border: 1px solid rgb(52, 8, 8);
   border-radius: 5px;
+  place-content: center;
   margin-top: 20px;
 }
 
@@ -34,14 +35,14 @@ body {
 
 /* Add your custom animation styles here */
 @keyframes scroll {
-  0% { background-image: url(images/img2.jpg); }
-  50% { background-color: black; }
-  100% { background-image: url(images/img2.jpg); }
+  0% { background-color: beige; }
+  50% { background-color: orangered; }
+  100% { background-color: beige; }
 }
 #results.mt-5 {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: #f8f9fa;
-  place-content: center;
+ 
   text-align: center;
   font-size: larger;
 }

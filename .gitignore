@@ -2,3 +2,4 @@ dump/
 node_modules/
 server1.js
 server2.js
+config.js

@@ -1,0 +1,50 @@
+/* Add your custom CSS styles here */
+
+/* Example styles */
+body {
+  background-color: rgb(52, 8, 8);
+}
+
+#intro {
+  text-align: center;
+  margin-top: 100px;
+}
+
+#search-form {
+  margin-top: 20px;
+}
+
+#results {
+  height: 200px;
+  background-color: rgb(52, 8, 8);
+  border: 1px solid rgb(52, 8, 8);
+  border-radius: 5px;
+  place-content: center;
+  margin-top: 20px;
+}
+
+.footer {
+  text-align: center;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+.part-to-style {
+  margin-top: 20px;
+}
+
+/* Add your custom animation styles here */
+@keyframes scroll {
+  0% { background-color: beige; }
+  50% { background-color: orangered; }
+  100% { background-color: beige; }
+}
+#results.mt-5 {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: #f8f9fa;
+ 
+  text-align: center;
+  font-size: larger;
+}
+
+/*# sourceMappingURL=/styles.e728262c.css.map */

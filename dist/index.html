@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeFind</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.e728262c.css">
+    <link rel="icon" type="image/png" href="/favicon.8003f84c.png">
+    <style>body {
+            animation-name: scroll;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes scroll {
+            0% { background-color: beige; }
+            50% { background-color: orangered }
+            100% { background-color: beige; }
+        }</style>
+<script src="/styles.e728262c.js"></script></head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+            <img src="/favicon.8003f84c.png" alt="RecipeFind Logo" style="height:30px;"> RecipeFind
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Features</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <main class="container">
+        <section id="intro">
+            <h1>RecipeFind App</h1>
+            <p>Find the best recipes from around the web.</p>
+            <form id="search-form" class="form-inline my-2 my-lg-0" action="results.html">
+                <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search for recipes..." aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <form id="ingredients-form" class="form-inline my-2 my-lg-0">
+                <input id="ingredients-input" class="form-control mr-sm-2" type="search" placeholder="Enter ingredients..." aria-label="ingredients">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search by ingredients</button>
+            </form>
+            <a href="https://peterokeno1.netlify.app/" class="btn btn-primary">Try it now</a>
+        </section>
+        <div id="results" class="mt-5">
+            <p>"Discover your next favorite dish with our RecipeFind app!
+            Our application is designed to help food enthusiasts and
+            home cooks explore a wide variety of recipes from around the world. 
+            Whether you 're looking for a quick weeknight dinner, a comforting soup,
+            or a decadent dessert, Recipe Finder has you covered.
+            Simply input your desired ingredients or select a cuisine,
+            and our app will provide a list of delicious recipes to try.</p>
+            <p>With RecipeFind, your culinary adventure is just a click away!"</p>
+        </div>
+    </main>
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="container">
+            <div class="part-to-style">
+            <span class="text-muted">Your best dish is a search away</span>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script type="module" src="/app.c09d0a7b.js"></script>
+</body>
+</html>

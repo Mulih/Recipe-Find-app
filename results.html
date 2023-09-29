@@ -6,6 +6,7 @@
     <title>Recipe Search Results</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
+
     <style>
         body {
             animation-name: scroll;
@@ -19,6 +20,7 @@
             100% { background-color: maroon; }
         }
     </style>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -53,36 +55,49 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
     <!-- Include the app.js file as a module -->
     <script type="module" src="scripts/app.js"></script>
     <!-- Include the JavaScript code that gets the search query and fetches the recipes -->
     <script type="module">
-        // Import the getRecipes function from the app.js file
-        import { getRecipes } from './scripts/app.js';
-
-        // Get the search query from the session storage
-        const query = sessionStorage.getItem('query');
-
-        // Fetch and display the recipes
-        if (query) {
-            getRecipes(query)
-                .then(results => {
-                    const resultsDiv = document.getElementById('results');
-                    if (results.length === 0) {
-                        resultsDiv.textContent = 'No recipes found!!';
-                    } else {
-                        // Display the search results
-                        results.forEach(recipe => {
-                            const recipeDiv = document.createElement('div');
-                            recipeDiv.textContent = recipe.title;
-                            resultsDiv.appendChild(recipeDiv);
-                        });
-                    }
-                })
-                .catch(error => {
-                    console.error(error);
-                });
-        }
+      // Import the getRecipes, getRecipesByIngredients, and displayRecipes functions from the app.js file
+      import { getRecipes, getRecipesByIngredients, displayRecipes } from './scripts/app.js';
+  
+      // Get the search query from the session storage
+      const query = sessionStorage.getItem('query');
+      const ingredients = sessionStorage.getItem('ingredients');
+  
+      // Fetch and display the recipes based on the search query or ingredients
+      if (query) {
+        getRecipes(query)
+          .then(results => {
+            const resultsContainer = document.getElementById('results');
+            if (results.length === 0) {
+              resultsContainer.textContent = 'No recipes found!!';
+            } else {
+              // Display the search results
+              displayRecipes(results);
+            }
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      } else if (ingredients) {
+        getRecipesByIngredients(ingredients)
+          .then(results => {
+            const resultsContainer = document.getElementById('results');
+            if (results.length === 0) {
+              resultsContainer.textContent = 'No recipes found!!';
+            } else {
+              // Display the search results
+              displayRecipes(results);
+            }
+          })
+          .catch(error => {
+            console.error(error);
+          });
+      }
     </script>
-</body>
-</html>
+    
+  </body>
+  </html>

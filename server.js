@@ -99,6 +99,18 @@ app.delete('/recipes/:id', async (req, res, next) => {
   }
 });
 
+// Get recipes by ingredients
+app.get('/recipes-by-ingredients', async (req, res, next) => {
+  try {
+    const ingredients = req.query.ingredients;
+    const response = await axios.get(`https://api.spoonacular.com/recipes/findByIngredients?apiKey=${apiKey}&ingredients=${ingredients}`);
+    const recipes = response.data;
+    res.json(recipes);
+  } catch (err) {
+    next(err);
+  }
+});
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   console.error(err);

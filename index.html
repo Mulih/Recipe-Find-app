@@ -15,9 +15,9 @@
         }
 
         @keyframes scroll {
-            0% { background-image: url(images/img2.jpg); }
-            50% { background-color: black; }
-            100% { background-image: url(images/img2.jpg); }
+            0% { background-color: beige; }
+            50% { background-color: orangered }
+            100% { background-color: beige; }
         }
     </style>
 </head>
@@ -50,6 +50,10 @@
             <form id="search-form" class="form-inline my-2 my-lg-0" action="results.html">
                 <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search for recipes..." aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+            <form id="ingredients-form" class="form-inline my-2 my-lg-0">
+                <input id="ingredients-input" class="form-control mr-sm-2" type="search" placeholder="Enter ingredients..." aria-label="ingredients">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search by ingredients</button>
             </form>
             <a href="https://peterokeno1.netlify.app/" class="btn btn-primary">Try it now</a>
         </section>
