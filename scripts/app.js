@@ -1,5 +1,3 @@
-//import axios
-import axios from 'axios';
 // Select elements from the DOM
 const searchForm = document.querySelector('#search-form');
 const searchInput = document.querySelector('#search-input');
@@ -45,7 +43,7 @@ export function getRecipes(query) {
     .catch(error => console.error('Error:', error));
 }
 
-async function getRecipesByIngredients(ingredients) {
+export async function getRecipesByIngredients(ingredients) {
   const url = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${apiKey}&ingredients=${ingredients}`;
 
   try {
